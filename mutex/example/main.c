@@ -79,7 +79,7 @@ static void node_wait(struct node *node)
     while (!node->ready)
         cond_wait(&node->cond, &node->mutex);
     node->ready = false;
-    printf("Thread [%c] enters the waiting state.\n",node->name);
+    printf("Thread [%c] becomes not ready.\n",node->name);
     mutex_unlock(&node->mutex);
 }
 
